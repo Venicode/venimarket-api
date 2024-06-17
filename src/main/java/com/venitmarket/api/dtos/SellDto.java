@@ -6,11 +6,11 @@ import com.venitmarket.api.domains.Product;
 import jakarta.validation.constraints.NotNull;
 
 public record SellDto(
-        Customer customer,
+        Long id_customer,
         @NotNull
-        Product product,
+        Long id_product,
         @NotNull
-        MethodPayment methodPayment,
+        Long id_methodPayment,
         @NotNull
         double amount,
         @NotNull

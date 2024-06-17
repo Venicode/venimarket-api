@@ -3,6 +3,8 @@ package com.venitmarket.api.domains;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 @Entity(name = "Sell")
 @Table(name = "TB_SELLS")
 @Getter
@@ -25,4 +27,5 @@ public class Sell {
     private MethodPayment methodPayment;
     private double amount;
     private int quantity;
+    private LocalDateTime sellDate;
 }
