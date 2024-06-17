@@ -6,7 +6,6 @@ import com.venitmarket.api.domains.Product;
 import jakarta.validation.constraints.NotNull;
 
 public record SellDto(
-        @NotNull
         Customer customer,
         @NotNull
         Product product,
