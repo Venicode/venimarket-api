@@ -14,15 +14,15 @@ public class Sell {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @ManyToOne
     @JoinColumn(name = "id_customer")
-    private Long id_customer;
     @ManyToOne
+    private Customer customer;
     @JoinColumn(name = "id_product")
-    private Long id_product;
     @ManyToOne
-    @JoinColumn(name = "id_payment")
-    private Long id_payment;
+    private Product product;
+    @JoinColumn(name = "id_methodPayment")
+    @ManyToOne
+    private MethodPayment methodPayment;
     private double amount;
     private int quantity;
 }

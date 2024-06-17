@@ -17,9 +17,9 @@ public class Product {
     private String description;
     private double costPrice;
     private double sellingPrice;
-    @ManyToOne
     @JoinColumn(name = "id_supplier")
-    private Long id_supplier;
+    @ManyToOne
+    private Supplier supplier;
     private String productionDate;
     private int quantity;
     @Enumerated(EnumType.STRING)
