@@ -3,10 +3,13 @@ package com.venimarket.api.services;
 import com.venimarket.api.domains.CashRegister;
 import com.venimarket.api.repositories.CashRegisterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 public class CashRegisterService {
@@ -39,5 +42,18 @@ public class CashRegisterService {
                 this.cashRegisterRepository.addBalance(newBalance, cashRegister.getId());
             }
         }
+    }
+
+    public CashRegister findCashRegisterById(Long id){
+        return this.cashRegisterRepository.getReferenceById(id);
+    }
+    public ResponseEntity<List<CashRegister>> getAllCashRegisters(){
+        List<CashRegister> cashRegisters = this.cashRegisterRepository.findAll();
+        return new ResponseEntity<>(cashRegisters, HttpStatus.OK);
+    }
+
+    public ResponseEntity<CashRegister> closeCashRegister(Long id) {
+        this.cashRegisterRepository.closeCashRegister(id, LocalDateTime.now());
+        return ResponseEntity.noContent().build();
     }
 }

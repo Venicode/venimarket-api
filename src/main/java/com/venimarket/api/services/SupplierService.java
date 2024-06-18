@@ -3,8 +3,13 @@ package com.venimarket.api.services;
 import com.venimarket.api.domains.Supplier;
 import com.venimarket.api.dtos.SupplierDto;
 import com.venimarket.api.repositories.SupplierRepository;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class SupplierService {
@@ -24,7 +29,12 @@ public class SupplierService {
     }
     public Supplier findSupplierById(Long id) throws Exception{
         return this.supplierRepository.findSupplierById(id)
-                .orElseThrow(()-> new Exception("Fornecedor não encontrado"));
+                .orElseThrow(()-> new EntityNotFoundException("Fornecedor não encontrado"));
 
+    }
+
+    public ResponseEntity<List<Supplier>> getAllSuppliers() {
+        List<Supplier> supplierList = this.supplierRepository.findAll();
+        return new ResponseEntity<>(supplierList, HttpStatus.OK);
     }
 }

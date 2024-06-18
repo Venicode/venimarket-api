@@ -5,8 +5,13 @@ import com.venimarket.api.domains.Supplier;
 import com.venimarket.api.dtos.ProductDto;
 import com.venimarket.api.dtos.StockDto;
 import com.venimarket.api.repositories.ProductRepository;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class ProductService {
@@ -38,7 +43,12 @@ public class ProductService {
     }
     public Product findProductById(Long id) throws Exception{
         return this.productRepository.findProductById(id)
-                .orElseThrow(()-> new Exception("Produto não encontrado"));
+                .orElseThrow(()-> new EntityNotFoundException("Produto não encontrado"));
 
+    }
+
+    public ResponseEntity<List<Product>> getAllProducts() {
+        List<Product> productList = this.productRepository.findAll();
+        return new ResponseEntity<>(productList, HttpStatus.OK);
     }
 }

@@ -3,8 +3,13 @@ package com.venimarket.api.services;
 import com.venimarket.api.domains.MethodPayment;
 import com.venimarket.api.dtos.MethodPaymentDto;
 import com.venimarket.api.repositories.MethodPaymentRepository;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class MethodPaymentService {
@@ -19,6 +24,11 @@ public class MethodPaymentService {
     }
     public MethodPayment findMethodPaymentById(Long id) throws Exception {
         return this.methodPaymentRepository.findMethodPaymentById(id)
-                .orElseThrow(()-> new Exception("Método de pagamento não encontrado"));
+                .orElseThrow(()-> new EntityNotFoundException("Método de pagamento não encontrado"));
+    }
+
+    public ResponseEntity<List<MethodPayment>> getAllMethodPayments() {
+        List<MethodPayment> methodPaymentList = this.methodPaymentRepository.findAll();
+        return  new ResponseEntity<>(methodPaymentList, HttpStatus.OK);
     }
 }

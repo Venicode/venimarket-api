@@ -5,11 +5,16 @@ import com.venimarket.api.domains.MethodPayment;
 import com.venimarket.api.domains.Product;
 import com.venimarket.api.domains.Sell;
 import com.venimarket.api.dtos.SellDto;
+import com.venimarket.api.infra.exceptions.InsufficientAmountException;
+import com.venimarket.api.infra.exceptions.InsufficientQuantityException;
 import com.venimarket.api.repositories.SellRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 public class SellService {
@@ -36,7 +41,10 @@ public class SellService {
         Sell newSell = new Sell();
 
         if(sellDto.amount()<amountTotal){
-            throw new Exception("Valor inferior a compra");
+            throw new InsufficientAmountException("Valor inferior a compra.");
+        }
+        if(sellDto.quantity()> product.getQuantity()){
+            throw new InsufficientQuantityException("Quantidade indisponível no estoque.");
         }
 
         newSell.setAmount(sellDto.amount());
@@ -51,5 +59,10 @@ public class SellService {
         this.cashRegisterService.addBalanceCashRegister(sellDto.amount(), newSell.getSellDate());
         this.stockService.updateStock(product.getQuantity()- sellDto.quantity(), product);
         return newSell;
+    }
+
+    public ResponseEntity<List<Sell>> getAllSells() {
+        List<Sell> sellList = this.sellRepository.findAll();
+        return new ResponseEntity<>(sellList, HttpStatus.OK);
     }
 }
