@@ -16,7 +16,7 @@ public record ProductDto(
         String productionDate,
         @NotNull
         int quantity,
-        @NotBlank
+        @NotNull
         ProductCategory productCategory,
         @NotNull
         Long barCode,
