@@ -22,6 +22,15 @@ public interface CashRegisterRepository extends JpaRepository<CashRegister, Long
             """)
     void addBalance(double balance,Long id);
 
+    @Modifying
+    @Query("""
+            update CashRegister c
+            set c.isClosed = "SIM",
+            c.finalDate = :finalDate
+            where c.id = :id
+            """)
+    void closeCashRegister(Long id, LocalDateTime finalDate);
+
     @Query("""
             select max(balance) c from CashRegister c
             """)
