@@ -21,8 +21,4 @@ public class CashRegister {
     private LocalDateTime finalDate;
     private String isClosed = "NÃO";
 
-    public void closeCashRegister(){
-        finalDate = LocalDateTime.now();
-        isClosed = "SIM";
-    }
 }
