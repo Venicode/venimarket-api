@@ -21,6 +21,11 @@ public class MethodPaymentController {
         MethodPayment newMethodPayment = this.methodPaymentService.createMethodPayment(methodPaymentDto);
         return new ResponseEntity<>(newMethodPayment, HttpStatus.CREATED);
     }
+    @PutMapping("/{id}")
+    public ResponseEntity<MethodPayment> updateMethodPayment(@RequestBody @Valid MethodPaymentDto methodPaymentDto, @PathVariable Long id) throws Exception {
+        MethodPayment newMethodPayment = this.methodPaymentService.updateMethodPayment(methodPaymentDto, id);
+        return ResponseEntity.noContent().build();
+    }
     @GetMapping
     public ResponseEntity<List<MethodPayment>> getAllMethodPayments(){
         return this.methodPaymentService.getAllMethodPayments();

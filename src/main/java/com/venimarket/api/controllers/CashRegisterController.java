@@ -14,7 +14,7 @@ public class CashRegisterController {
     @Autowired
     private CashRegisterService cashRegisterService;
 
-    @DeleteMapping("/{id}")
+    @PutMapping("/CloseCashRegister/{id}")
     public ResponseEntity<CashRegister> closeCashRegister(@PathVariable Long id){
         return this.cashRegisterService.closeCashRegister(id);
     }

@@ -22,6 +22,12 @@ public class MethodPaymentService {
         this.methodPaymentRepository.save(newMethodPayment);
         return newMethodPayment;
     }
+    public MethodPayment updateMethodPayment(MethodPaymentDto methodPaymentDto, Long id) throws Exception {
+        MethodPayment newMethodPayment = findMethodPaymentById(id);
+        newMethodPayment.setTypesPayments(methodPaymentDto.typesPayments());
+        this.methodPaymentRepository.save(newMethodPayment);
+        return newMethodPayment;
+    }
     public MethodPayment findMethodPaymentById(Long id) throws Exception {
         return this.methodPaymentRepository.findMethodPaymentById(id)
                 .orElseThrow(()-> new EntityNotFoundException("Método de pagamento não encontrado"));

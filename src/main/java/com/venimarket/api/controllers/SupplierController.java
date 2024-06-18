@@ -22,6 +22,11 @@ public class SupplierController {
         Supplier newSupplier = this.supplierService.createSupplier(supplierDto);
         return new ResponseEntity<>(newSupplier, HttpStatus.CREATED);
     }
+    @PutMapping("/{id}")
+    public ResponseEntity<Supplier> updateSupplier(@RequestBody @Valid SupplierDto supplierDto, @PathVariable Long id) throws Exception{
+        Supplier newSupplier = this.supplierService.updateSupplier(supplierDto, id);
+        return ResponseEntity.noContent().build();
+    }
     @GetMapping
     public ResponseEntity<List<Supplier>> getAllSuppliers(){
         return this.supplierService.getAllSuppliers();

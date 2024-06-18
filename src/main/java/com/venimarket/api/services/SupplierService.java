@@ -27,6 +27,17 @@ public class SupplierService {
         this.supplierRepository.save(newSupplier);
         return newSupplier;
     }
+    public Supplier updateSupplier(SupplierDto supplierDto, Long id) throws Exception {
+        Supplier newSupplier = findSupplierById(id);
+        newSupplier.setCnpj(supplierDto.cnpj());
+        newSupplier.setEmail(supplierDto.email());
+        newSupplier.setPhone(supplierDto.phone());
+        newSupplier.setTradeName(supplierDto.tradeName());
+        newSupplier.setCorporateName(supplierDto.corporateName());
+
+        this.supplierRepository.save(newSupplier);
+        return newSupplier;
+    }
     public Supplier findSupplierById(Long id) throws Exception{
         return this.supplierRepository.findSupplierById(id)
                 .orElseThrow(()-> new EntityNotFoundException("Fornecedor não encontrado"));

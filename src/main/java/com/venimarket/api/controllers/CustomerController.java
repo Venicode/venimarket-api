@@ -22,6 +22,11 @@ public class CustomerController {
         Customer newCustomer = this.customerService.createCustomer(customerDto);
         return new ResponseEntity<>(newCustomer, HttpStatus.CREATED);
     }
+    @PutMapping("/{id}")
+    public ResponseEntity<Customer> updateCustomer(@RequestBody @Valid CustomerDto customerDto, @PathVariable Long id) throws Exception{
+        Customer newCustomer = this.customerService.updateCustomer(customerDto, id);
+        return ResponseEntity.noContent().build();
+    }
     @GetMapping
     public ResponseEntity<List<Customer>> getAllCustomers(){
         return this.customerService.getAllCustomers();
