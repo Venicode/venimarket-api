@@ -34,7 +34,7 @@ public class CashRegisterService {
             openCashRegister(balance);
         } else{
             CashRegister cashRegister = this.cashRegisterRepository.findAtualCashRegister(initialDate, dateSell);
-            if(cashRegister.getIsClosed().equals("SIM")){
+            if(cashRegister.isClosed()){
                 openCashRegister(balance);
             }
             else{

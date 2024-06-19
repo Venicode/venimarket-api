@@ -48,4 +48,7 @@ public class CustomerService {
         List<Customer> customerList = this.customerRepository.findAll();
         return new ResponseEntity<>(customerList, HttpStatus.OK);
     }
+    public void disableCustomer(Long id){
+        this.customerRepository.disableCustomer(id);
+    }
 }

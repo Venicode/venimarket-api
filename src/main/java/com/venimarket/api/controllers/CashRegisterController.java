@@ -14,12 +14,13 @@ public class CashRegisterController {
     @Autowired
     private CashRegisterService cashRegisterService;
 
-    @PutMapping("/CloseCashRegister/{id}")
-    public ResponseEntity<CashRegister> closeCashRegister(@PathVariable Long id){
-        return this.cashRegisterService.closeCashRegister(id);
-    }
     @GetMapping
     public ResponseEntity<List<CashRegister>> getAllCashRegisters(){
         return this.cashRegisterService.getAllCashRegisters();
     }
+    @PutMapping("/CloseCashRegister/{id}")
+    public ResponseEntity<CashRegister> closeCashRegister(@PathVariable Long id){
+        return this.cashRegisterService.closeCashRegister(id);
+    }
+
 }

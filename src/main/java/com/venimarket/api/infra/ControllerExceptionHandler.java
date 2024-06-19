@@ -4,6 +4,7 @@ import com.venimarket.api.dtos.exceptions.FieldsErrorsException;
 import com.venimarket.api.infra.exceptions.InsufficientAmountException;
 import com.venimarket.api.infra.exceptions.InsufficientQuantityException;
 import jakarta.persistence.EntityNotFoundException;
+import jakarta.validation.ConstraintViolationException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -25,6 +26,10 @@ public class ControllerExceptionHandler {
     }
     @ExceptionHandler(InsufficientAmountException.class)
     public ResponseEntity threatInsufficientAmount(InsufficientAmountException exception){
+        return ResponseEntity.badRequest().body(exception.getMessage());
+    }
+    @ExceptionHandler(ConstraintViolationException.class)
+    public ResponseEntity threatConstraintViolationException(ConstraintViolationException exception){
         return ResponseEntity.badRequest().body(exception.getMessage());
     }
     @ExceptionHandler(InsufficientQuantityException.class)

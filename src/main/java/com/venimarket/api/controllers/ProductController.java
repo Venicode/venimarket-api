@@ -22,13 +22,18 @@ public class ProductController {
         Product newProduct = this.productService.createProduct(productDto);
         return new ResponseEntity<>(newProduct, HttpStatus.CREATED);
     }
-    @PutMapping("/{id}")
-    public ResponseEntity<Product> updateeProduct(@RequestBody @Valid ProductDto productDto, @PathVariable Long id) throws Exception{
-        Product newProduct = this.productService.updateProduct(productDto, id);
-        return ResponseEntity.noContent().build();
-    }
     @GetMapping
     public ResponseEntity<List<Product>> getAllProducts(){
         return this.productService.getAllProducts();
+    }
+    @PutMapping("/{id}")
+    public ResponseEntity<Object> updateeProduct(@RequestBody @Valid ProductDto productDto, @PathVariable Long id) throws Exception{
+        Product newProduct = this.productService.updateProduct(productDto, id);
+        return ResponseEntity.noContent().build();
+    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Object> disableProduct(@PathVariable Long id){
+        this.productService.disableProduct(id);
+        return ResponseEntity.noContent().build();
     }
 }

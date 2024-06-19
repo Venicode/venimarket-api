@@ -37,4 +37,7 @@ public class MethodPaymentService {
         List<MethodPayment> methodPaymentList = this.methodPaymentRepository.findAll();
         return  new ResponseEntity<>(methodPaymentList, HttpStatus.OK);
     }
+    public void deleteMethodPayment(Long id){
+        this.methodPaymentRepository.deleteMethodPayment(id);
+    }
 }

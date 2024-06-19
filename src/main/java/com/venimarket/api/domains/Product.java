@@ -27,5 +27,5 @@ public class Product {
     @Column(unique = true)
     private Long barCode;
     private String brand;
-
+    private boolean isActive = true;
 }

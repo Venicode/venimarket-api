@@ -25,4 +25,5 @@ public class Supplier {
     @Column(unique = true)
     @Email
     private String email;
+    private boolean isActive = true;
 }

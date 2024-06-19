@@ -25,7 +25,7 @@ public interface CashRegisterRepository extends JpaRepository<CashRegister, Long
     @Modifying
     @Query("""
             update CashRegister c
-            set c.isClosed = "SIM",
+            set c.isClosed = true,
             c.finalDate = :finalDate
             where c.id = :id
             """)

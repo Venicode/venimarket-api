@@ -48,4 +48,7 @@ public class SupplierService {
         List<Supplier> supplierList = this.supplierRepository.findAll();
         return new ResponseEntity<>(supplierList, HttpStatus.OK);
     }
+    public void disableSupplier(Long id){
+        this.supplierRepository.disableSupplier(id);
+    }
 }

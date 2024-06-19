@@ -19,6 +19,5 @@ public class CashRegister {
     private LocalDateTime initialDate;
     private double balance = 0;
     private LocalDateTime finalDate;
-    private String isClosed = "NÃO";
-
+    private boolean isClosed = false;
 }

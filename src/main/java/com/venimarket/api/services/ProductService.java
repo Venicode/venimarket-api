@@ -69,4 +69,7 @@ public class ProductService {
         List<Product> productList = this.productRepository.findAll();
         return new ResponseEntity<>(productList, HttpStatus.OK);
     }
+    public void disableProduct(Long id){
+        this.productRepository.disableProduct(id);
+    }
 }

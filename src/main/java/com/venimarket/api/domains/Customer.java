@@ -24,4 +24,5 @@ public class Customer {
     @Column(unique = true)
     @Email
     private String email;
+    private boolean isActive = true;
 }

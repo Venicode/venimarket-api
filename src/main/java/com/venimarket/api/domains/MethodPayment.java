@@ -3,7 +3,7 @@ package com.venimarket.api.domains;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Entity(name = "Method Payment")
+@Entity(name = "MethodPayment")
 @Table(name = "TB_METHODSPAYMENTS")
 @Getter
 @Setter
