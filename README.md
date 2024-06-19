@@ -132,6 +132,6 @@ POST /customer - Register a new sell.
 
 ```
 
-<h2 id="database">Database</h2>
+<h2 id="database">📝Database</h2>
 
 <p>For this project, I choose the H2 Database, it stores data in memomy, being ideal for testing, it doesn't not persist the data on disk. So, when closing the terminal, all data will be lost.</p>
