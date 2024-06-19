@@ -11,7 +11,7 @@
 <p align="center">
  <a href="#started">Getting Started</a> • 
   <a href="#routes">API Endpoints</a> •
- <a href="#database">Database</a>
+ <a href="#database">Database</a> •
    <a href="#br">Business Rules</a>
 </p>
 <p align="center">
@@ -140,11 +140,13 @@ POST /customer - Register a new sell.
 <h2 id="br">📝Business Rules</h2>
 <p>Before create a request, read the business rules below:</p>
 <p>Only have three method payments that must be register following in this way:</p>
-- CASH <br>
+- CASH<br>
 - CREDITCARD<br>
 - PIX<br>
+<br>
 <p>The same thing is applied when you will register a product, which there are only two category products:</p>
 - GROCEY<br>
 - DRINKS<br>
+<br>
 <p>When you register a new sell, if it's your first once, a new cash register will create. But, in your second sell, the balance will be added, unless you close the cash register. If the last cash register is closed, a new one will be create.</p>
 
