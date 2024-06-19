@@ -41,10 +41,10 @@ C:\path\to\file>java -jar api-venimarket.jar
 
 ![spring-print](https://github.com/Venicode/venimarket-api/assets/44931124/5d40b74f-bea1-4430-ae67-240d5fd4b0ab)
 
-<p>After that, you can access the swagger page: `http://localhost:8080/swagger-ui/index.html#/`</p>
+<p>After that, you can access the swagger page: http://localhost:8080/swagger-ui/index.html#/</p>
 
 <h2 id="routes">📍 API Endpoints</h2>
-<p>Example to request something: `http://localhost:8080/get/supplier`</p>
+<p>Example to request something: http://localhost:8080/get/supplier</p>
 <p>All endpoints that you can use in the application group by entities:</p>
 
 <p>Supplier Endpoints</p>
