@@ -135,7 +135,7 @@ POST /customer - Register a new sell.
 
 <h2 id="database">📝 Database</h2>
 
-<p>For this project, I chose the H2 Database, it stores data in memomy, being ideal for testing, it doesn't not persist the data on disk. So, when closing the terminal, all data will be lost.</p>
+<p>For this project, I chose the H2 Database, it stores data in memomy, being ideal for testing, where it doesn't not persist the data on disk. So, when closing the terminal, all data will be lost.</p>
 
 <h2 id="br">⛔ Business Rules</h2>
 <p>Before create a request, read the business rules below:</p>
