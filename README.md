@@ -119,7 +119,6 @@ GET /cashRegister - Retrieve a list of all cash registers.
 
 PUT /cashRegister/CloseCashRegister/{id} - Close a specific cash register by Id.
 
-
 ```
 
 <p>Sell Endpoints</p>
