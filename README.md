@@ -1,6 +1,6 @@
 [SPRING_BADGE]: https://img.shields.io/badge/spring-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white
 [JAVA_BADGE]:https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white
-<h1 align="center" style="font-weight: bold;">Venimarket API </h1>
+<h1 align="center" style="font-weight: bold;">VeniMarket API </h1>
 <div align="center">
   
 ![spring][SPRING_BADGE]
@@ -42,11 +42,11 @@ C:\path\to\file>java -jar api-venimarket.jar
 
 ![spring-print](https://github.com/Venicode/venimarket-api/assets/44931124/5d40b74f-bea1-4430-ae67-240d5fd4b0ab)
 
-<p>After that, you can access the swagger page: http://localhost:8080/swagger-ui/index.html#/</p>
+<p>After that, you can access the swagger page: <a href="http://localhost:8080/swagger-ui/index.html#/">http://localhost:8080/swagger-ui/index.html#/</a></p>
 
 <h2 id="routes">📍 API Endpoints</h2>
 <p> Before you use the api, read carefully the <a href="#br">Business Rules</a>.
-<p>Example to request something: http://localhost:8080/supplier</p>
+<p>Example to request something: <a href="http://localhost:8080/supplier">http://localhost:8080/supplier</a></p>
 <p>All endpoints that you can use in the application group by entities:</p>
 
 <p>Supplier Endpoints</p>
