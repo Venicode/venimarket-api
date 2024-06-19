@@ -45,7 +45,7 @@ After that, you can access the swagger page: http://localhost:8080/swagger-ui/in
 
 <h2 id="routes">📍 API Endpoints</h2>
 
-All endpoints that you can use in the application group by entitys:
+All endpoints that you can use in the application group by entities:
 
 <p>Supplier Endpoints</p>
 
