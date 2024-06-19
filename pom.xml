@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.venitmarket</groupId>
 	<artifactId>api</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>venimarket</version>
 	<name>api</name>
 	<description>Retail system in Spring Boot</description>
 	<properties>
@@ -35,8 +35,8 @@
 			<version>2.5.0</version>
 		</dependency>
 		<dependency>
-			<groupId>com.mysql</groupId>
-			<artifactId>mysql-connector-j</artifactId>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
