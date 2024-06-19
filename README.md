@@ -10,8 +10,7 @@
 <p align="center">
  <a href="#started">Getting Started</a> • 
   <a href="#routes">API Endpoints</a> •
- <a href="#colab">Collaborators</a> •
- <a href="#contribute">Contribute</a>
+ <a href="#database">Collaborators</a> •
 </p>
 <p align="center">
   <b>This is a simple API that you can use in your retail software.</b>
@@ -45,10 +44,9 @@ After that, you can access the swagger page: http://localhost:8080/swagger-ui/in
 
 <h2 id="routes">📍 API Endpoints</h2>
 
-Here you can list the main routes of your API, and what are their expected request bodies.
+All endpoints that you can use in the application group by entitys:
 
 <p>Supplier Endpoints</p>
-​
 
 ```
 
@@ -132,3 +130,7 @@ GET /sell - Retrieve a list of all sells.
 POST /customer - Register a new sell.
 
 ```
+
+<h2 id="database">Database</h2>
+
+<p>For this project, I choose the H2 Database, it stores data in memomy, being ideal for testing, it doesn't not persist the data on disk. So, when closing the terminal, all data will be lost.</p>
