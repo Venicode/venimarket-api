@@ -44,7 +44,7 @@ C:\path\to\file>java -jar api-venimarket.jar
 <p>After that, you can access the swagger page: http://localhost:8080/swagger-ui/index.html#/</p>
 
 <h2 id="routes">📍 API Endpoints</h2>
-<p>Example to request something: http://localhost:8080/get/supplier</p>
+<p>Example to request something: http://localhost:8080/supplier</p>
 <p>All endpoints that you can use in the application group by entities:</p>
 
 <p>Supplier Endpoints</p>
