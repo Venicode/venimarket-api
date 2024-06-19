@@ -10,7 +10,7 @@
 <p align="center">
  <a href="#started">Getting Started</a> • 
   <a href="#routes">API Endpoints</a> •
- <a href="#database">Database</a> •
+ <a href="#database">Database</a>
 </p>
 <p align="center">
   <b>This is a simple API that you can use in your retail software.</b>
