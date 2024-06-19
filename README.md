@@ -5,7 +5,8 @@
   
 ![spring][SPRING_BADGE]
 ![java][JAVA_BADGE]
-
+<img src="https://img.shields.io/badge/H2 Database-blue?style=for-the-badge&logo=java" alt="Sistema Mercado">
+<img src="https://img.shields.io/badge/Swagger-green?style=for-the-badge&logo=java" alt="Sistema Mercado">
 </div>
 <p align="center">
  <a href="#started">Getting Started</a> • 
