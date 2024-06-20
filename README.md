@@ -155,5 +155,5 @@ POST /customer - Register a new sell.
 
 <h2 id="br">⛔ Business Rules</h2>
 
-<p>When you register a new sell, if it's your first once, a new cash register will create. But, in your second sell, the balance will be added, unless you close the cash register. If the last cash register is closed, a new one will be create.</p>
+<p>When you register a new sell, if it's your first once, a new cash register will create. But, in your second sell, the balance will be added, unless you close the cash register. If the last cash register is closed, a new one will be created.</p>
 
