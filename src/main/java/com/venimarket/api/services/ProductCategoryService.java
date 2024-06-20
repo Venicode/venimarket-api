@@ -18,7 +18,7 @@ public class ProductCategoryService {
 
     public ProductCategory createProductCategory(ProductCategoryDto productCategoryDto){
         ProductCategory productCategory = new ProductCategory();
-        productCategory.setDescriptionCategory(productCategory.getDescriptionCategory());
+        productCategory.setDescriptionCategory(productCategoryDto.descriptionCategory());
         this.productCategoryRepository.save(productCategory);
         return productCategory;
     }
