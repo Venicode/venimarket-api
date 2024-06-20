@@ -20,7 +20,7 @@ public record ProductDto(
         @NotNull
         int quantity,
         @NotNull
-        ProductCategory productCategory,
+        Long id_productCategory,
         @NotNull
         Long barCode,
         String brand
