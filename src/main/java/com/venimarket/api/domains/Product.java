@@ -3,6 +3,8 @@ package com.venimarket.api.domains;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
+
 @Entity(name = "Product")
 @Table(name = "TB_PRODUCTS")
 @Getter
@@ -20,9 +22,10 @@ public class Product {
     @JoinColumn(name = "id_supplier")
     @ManyToOne
     private Supplier supplier;
-    private String productionDate;
+    private LocalDate productionDate;
     private int quantity;
-    @Enumerated(EnumType.STRING)
+    @JoinColumn(name = "id_productCategory")
+    @ManyToOne
     private ProductCategory productCategory;
     @Column(unique = true)
     private Long barCode;

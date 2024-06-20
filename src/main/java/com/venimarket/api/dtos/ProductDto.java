@@ -4,6 +4,9 @@ import com.venimarket.api.domains.ProductCategory;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 public record ProductDto(
         @NotBlank
         String description,
@@ -13,7 +16,7 @@ public record ProductDto(
         double sellingPrice,
         @NotNull
         Long id_supplier,
-        String productionDate,
+        LocalDate productionDate,
         @NotNull
         int quantity,
         @NotNull
