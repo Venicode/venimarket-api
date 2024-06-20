@@ -14,6 +14,5 @@ public class MethodPayment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Enumerated(EnumType.STRING)
-    private PaymentsTypes typesPayments;
+    private String typesPayments;
 }
