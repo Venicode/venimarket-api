@@ -18,13 +18,13 @@ public class MethodPaymentService {
 
     public MethodPayment createMethodPayment(MethodPaymentDto methodPaymentDto){
         MethodPayment newMethodPayment = new MethodPayment();
-        newMethodPayment.setTypesPayments(methodPaymentDto.typesPayments());
+        newMethodPayment.setDescriptionMethodPayment(methodPaymentDto.typesPayments());
         this.methodPaymentRepository.save(newMethodPayment);
         return newMethodPayment;
     }
     public MethodPayment updateMethodPayment(MethodPaymentDto methodPaymentDto, Long id) throws Exception {
         MethodPayment newMethodPayment = findMethodPaymentById(id);
-        newMethodPayment.setTypesPayments(methodPaymentDto.typesPayments());
+        newMethodPayment.setDescriptionMethodPayment(methodPaymentDto.typesPayments());
         this.methodPaymentRepository.save(newMethodPayment);
         return newMethodPayment;
     }
