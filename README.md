@@ -45,7 +45,7 @@ C:\path\to\file>java -jar api-venimarket.jar
 <p>After that, you can access the swagger page: <a href="http://localhost:8080/swagger-ui/index.html#/">http://localhost:8080/swagger-ui/index.html#/</a></p>
 
 <h2 id="routes">📍 API Endpoints</h2>
-<p> Before you use the api, read carefully the <a href="#br">Business Rules</a>.
+
 <p>Example to request something: <a href="http://localhost:8080/supplier">http://localhost:8080/supplier</a></p>
 <p>All endpoints that you can use in the application group by entities:</p>
 
@@ -138,15 +138,6 @@ POST /customer - Register a new sell.
 <p>For this project, I chose the H2 Database, it stores data in memomy, being ideal for testing, where it doesn't not persist the data on disk. So, when closing the terminal, all data will be lost.</p>
 
 <h2 id="br">⛔ Business Rules</h2>
-<p>Before create a request, read the business rules below:</p>
-<p>Only have three method payments that must be register following in this way:</p>
-- CASH<br>
-- CREDITCARD<br>
-- PIX<br>
-<br>
-<p>The same thing is applied when you will register a product, which there are only two category products:</p>
-- GROCEY<br>
-- DRINKS<br>
-<br>
+
 <p>When you register a new sell, if it's your first once, a new cash register will create. But, in your second sell, the balance will be added, unless you close the cash register. If the last cash register is closed, a new one will be create.</p>
 
