@@ -62,7 +62,7 @@ public class ProductService {
     }
     public Product findProductById(Long id) throws Exception{
         return this.productRepository.findProductById(id)
-                .orElseThrow(()-> new EntityNotFoundException("Produto não encontrado"));
+                .orElseThrow(()-> new EntityNotFoundException("Product not found."));
 
     }
     public ResponseEntity<List<Product>> getAllProducts() {

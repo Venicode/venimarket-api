@@ -40,7 +40,7 @@ public class SupplierService {
     }
     public Supplier findSupplierById(Long id) throws Exception{
         return this.supplierRepository.findSupplierById(id)
-                .orElseThrow(()-> new EntityNotFoundException("Fornecedor não encontrado"));
+                .orElseThrow(()-> new EntityNotFoundException("Supplier not found."));
 
     }
 

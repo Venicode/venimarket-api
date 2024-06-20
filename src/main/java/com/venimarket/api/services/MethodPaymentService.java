@@ -30,7 +30,7 @@ public class MethodPaymentService {
     }
     public MethodPayment findMethodPaymentById(Long id) throws Exception {
         return this.methodPaymentRepository.findMethodPaymentById(id)
-                .orElseThrow(()-> new EntityNotFoundException("Método de pagamento não encontrado"));
+                .orElseThrow(()-> new EntityNotFoundException("Method Payment not found."));
     }
 
     public ResponseEntity<List<MethodPayment>> getAllMethodPayments() {

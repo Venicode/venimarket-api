@@ -41,10 +41,10 @@ public class SellService {
         Sell newSell = new Sell();
 
         if(sellDto.amount()<amountTotal){
-            throw new InsufficientAmountException("Valor inferior a compra.");
+            throw new InsufficientAmountException("Insufficient amount.");
         }
         if(sellDto.quantity()> product.getQuantity()){
-            throw new InsufficientQuantityException("Quantidade indisponível no estoque.");
+            throw new InsufficientQuantityException("Insufficient quantity in stock.");
         }
 
         newSell.setAmount(sellDto.amount());

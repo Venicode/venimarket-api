@@ -15,8 +15,7 @@ public class SpringDocConfigurations {
         return new OpenAPI()
                 .info(new Info()
                         .title("VeniMarket API")
-                        .description("API para sistema de mercado local. Com funcionalidades de " +
-                                "cadastrar produto, fornecedor, cliente, métodos de pagamento, abrir e fechar caixa e realizar vendas;")
+                        .description("This is a simple API that you can use in your retail software.")
                         .contact(new Contact()
                                 .name("GitHub")
                                 .url("https://github.com/Venicode")));

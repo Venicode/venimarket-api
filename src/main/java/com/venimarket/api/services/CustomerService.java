@@ -40,7 +40,7 @@ public class CustomerService {
     }
     public Customer findCustomerById(Long id) throws Exception{
         return this.customerRepository.findCustomerById(id)
-                .orElseThrow(()-> new EntityNotFoundException("Cliente não encontrado"));
+                .orElseThrow(()-> new EntityNotFoundException("Customer not found."));
 
     }
 
