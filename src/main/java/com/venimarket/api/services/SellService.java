@@ -37,7 +37,10 @@ public class SellService {
         double amountTotal = product.getSellingPrice()*sellDto.quantity();
         MethodPayment newMethodPayment = methodPaymentService
                 .findMethodPaymentById(sellDto.id_methodPayment());
-        Customer customer = this.customerService.findCustomerById(sellDto.id_customer());
+        Customer customer = new Customer();
+        if(sellDto.id_customer()!=null) {
+            customer = this.customerService.findCustomerById(sellDto.id_customer());
+        }
         Sell newSell = new Sell();
 
         if(sellDto.amount()<amountTotal){
@@ -51,7 +54,9 @@ public class SellService {
         newSell.setProduct(product);
         newSell.setQuantity(sellDto.quantity());
         newSell.setMethodPayment(newMethodPayment);
-        newSell.setCustomer(customer);
+        if(sellDto.id_customer()!=null) {
+            newSell.setCustomer(customer);
+        }
         newSell.setSellDate(LocalDateTime.now());
 
         this.sellRepository.save(newSell);
