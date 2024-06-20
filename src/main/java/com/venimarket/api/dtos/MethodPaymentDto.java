@@ -4,6 +4,6 @@ import jakarta.validation.constraints.NotNull;
 
 public record MethodPaymentDto(
         @NotNull
-        String typesPayments
+        String descriptionMethodPayment
 ) {
 }
