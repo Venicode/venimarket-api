@@ -1,6 +1,7 @@
 package com.venimarket.api.services;
 
 import com.venimarket.api.domains.Product;
+import com.venimarket.api.domains.ProductCategory;
 import com.venimarket.api.domains.Supplier;
 import com.venimarket.api.dtos.ProductDto;
 import com.venimarket.api.dtos.StockDto;
@@ -20,12 +21,15 @@ public class ProductService {
     @Autowired
     private StockService stockService;
     @Autowired
+    private ProductCategoryService productCategoryService;
+    @Autowired
     private ProductRepository productRepository;
 
     public Product createProduct(ProductDto productDto) throws Exception{
         Supplier supplier = supplierService.findSupplierById(productDto.id_supplier());
+        ProductCategory productCategory = productCategoryService.findProductCategoryById(productDto.id_productCategory());
         Product newProduct = new Product();
-        newProduct.setProductCategory(productDto.productCategory());
+        newProduct.setProductCategory(productCategory);
         newProduct.setProductionDate(productDto.productionDate());
         newProduct.setBrand(productDto.brand());
         newProduct.setDescription(productDto.description());
@@ -43,8 +47,9 @@ public class ProductService {
     }
     public Product updateProduct(ProductDto productDto, Long id) throws Exception{
         Supplier supplier = supplierService.findSupplierById(productDto.id_supplier());
+        ProductCategory productCategory = productCategoryService.findProductCategoryById(productDto.id_productCategory());
         Product newProduct = findProductById(id);
-        newProduct.setProductCategory(productDto.productCategory());
+        newProduct.setProductCategory(productCategory);
         newProduct.setProductionDate(productDto.productionDate());
         newProduct.setBrand(productDto.brand());
         newProduct.setDescription(productDto.description());
