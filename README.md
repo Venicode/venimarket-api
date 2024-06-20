@@ -65,6 +65,22 @@ DELETE /supplier/{id} - Delete(disable changing isActive=false) a specific suppl
 
 ```
 
+<p>Product Category Endpoints</p>
+
+```
+
+GET /productCategory - Retrieve a list of all product categories.
+
+GET /productCategory/{id} - Retrieve a specific product category by ID.
+
+POST /productCategory - Register a new product category.
+
+PUT /productCategory/{id} - Update the product category informations.
+
+DELETE /productCategory/{id} - Delete a specific product category by ID.
+
+```
+
 <p>Product Endpoints</p>
 
 ```
