@@ -5,14 +5,16 @@
   
 ![spring][SPRING_BADGE]
 ![java][JAVA_BADGE]
-<img src="https://img.shields.io/badge/H2 Database-blue?style=for-the-badge&logo=java" alt="Sistema Mercado">
+<img src="https://img.shields.io/badge/H2 Database-darkblue?style=for-the-badge&logo=java" alt="Sistema Mercado">
 <img src="https://img.shields.io/badge/Swagger-green?style=for-the-badge&logo=java" alt="Sistema Mercado">
+<img src="https://img.shields.io/badge/Docker-blue?style=for-the-badge&logo=java" alt="Sistema Mercado">
 </div>
 <p align="center">
  <a href="#started">Getting Started</a> • 
   <a href="#routes">API Endpoints</a> •
  <a href="#database">Database</a> •
-   <a href="#br">Business Rules</a>
+   <a href="#br">Business Rules</a> •
+  <a href="#dockerfile">Dockerfile</a> •
 </p>
 <p align="center">
   <b>This is a simple API that you can use in your retail software.</b>
@@ -157,3 +159,11 @@ POST /customer - Register a new sell.
 
 <p>When you register a new sell, if it's your first once, a new cash register will be created. But, in your second sell, the balance will be added, unless you close the cash register. If the last cash register is closed, a new one will be created.</p>
 
+<h2 id="dockerfile">⛔ Dockerfile</h2>
+
+<p>If you are familiar with Docker, be confortable to download the image about this project: <a href="https://hub.docker.com/r/venitt/venimarket">Download docker file</a></p>
+<p>Then, just execute the command bellow in your command prompt or in your virtual machine</p>
+
+```
+docker pull venitt/venimarket
+```
