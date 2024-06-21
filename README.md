@@ -6,8 +6,8 @@
 ![spring][SPRING_BADGE]
 ![java][JAVA_BADGE]
 <img src="https://img.shields.io/badge/H2 Database-darkblue?style=for-the-badge&logo=java" alt="Sistema Mercado">
-<img src="https://img.shields.io/badge/Swagger-green?style=for-the-badge&logo=java" alt="Sistema Mercado">
-<img src="https://img.shields.io/badge/Docker-blue?style=for-the-badge&logo=java" alt="Sistema Mercado">
+![Swagger](https://img.shields.io/badge/-Swagger-%23Clojure?style=for-the-badge&logo=swagger&logoColor=white)
+	![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
 </div>
 <p align="center">
  <a href="#started">Getting Started</a> • 
