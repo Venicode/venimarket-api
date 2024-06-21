@@ -5,20 +5,22 @@
   
 ![spring][SPRING_BADGE]
 ![java][JAVA_BADGE]
-<img src="https://img.shields.io/badge/H2 Database-blue?style=for-the-badge&logo=java" alt="Sistema Mercado">
-<img src="https://img.shields.io/badge/Swagger-green?style=for-the-badge&logo=java" alt="Sistema Mercado">
+<img src="https://img.shields.io/badge/H2 Database-darkblue?style=for-the-badge&logo=java" alt="Sistema Mercado">
+![Swagger](https://img.shields.io/badge/-Swagger-%23Clojure?style=for-the-badge&logo=swagger&logoColor=white)
+	![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
 </div>
 <p align="center">
  <a href="#started">Getting Started</a> • 
   <a href="#routes">API Endpoints</a> •
  <a href="#database">Database</a> •
-   <a href="#br">Business Rules</a>
+   <a href="#br">Business Rules</a> •
+  <a href="#dockerfile">Dockerfile</a> •
 </p>
 <p align="center">
   <b>This is a simple API that you can use in your retail software.</b>
 </p>
 <h2 id="started">🚀 Getting started</h2>
-<p>If you want just use the API for your front-ends projects, download the <a href="https://www.transfernow.net/dl/20240619CaluUEZy">api-venimarket.jar</a> file.</p>
+<p>If you want just use the API for your front-ends projects, download the <a href="https://www.transfernow.net/dl/202406204jSKnS5V">api-venimarket.jar</a> file.</p>
 <p>To take a look, modify and debug the code in your IDE, clone this repository:</p>
 
 ```bash
@@ -33,7 +35,7 @@ git clone https://github.com/Venicode/venimarket-api.git
 
 <h3>Starting</h3>
 
-<p>When download to <a href="https://www.transfernow.net/dl/20240619CaluUEZy">api-venimarket.jar</a> is done, move this file whatever you want and open a prompt command. Then, check the path's file and type the command below:</p>
+<p>When download to <a href="https://www.transfernow.net/dl/202406204jSKnS5V">api-venimarket.jar</a> is done, move this file whatever you want and open a prompt command. Then, check the path's file and type the command below:</p>
 
 ```bash
 C:\path\to\file>java -jar api-venimarket.jar
@@ -62,6 +64,22 @@ POST /supplier - Register a new supplier.
 PUT /supplier/{id} - Update the supplier informations.
 
 DELETE /supplier/{id} - Delete(disable changing isActive=false) a specific supplier by ID.
+
+```
+
+<p>Product Category Endpoints</p>
+
+```
+
+GET /productCategory - Retrieve a list of all product categories.
+
+GET /productCategory/{id} - Retrieve a specific product category by ID.
+
+POST /productCategory - Register a new product category.
+
+PUT /productCategory/{id} - Update the product category informations.
+
+DELETE /productCategory/{id} - Delete a specific product category by ID.
 
 ```
 
@@ -139,5 +157,13 @@ POST /customer - Register a new sell.
 
 <h2 id="br">⛔ Business Rules</h2>
 
-<p>When you register a new sell, if it's your first once, a new cash register will create. But, in your second sell, the balance will be added, unless you close the cash register. If the last cash register is closed, a new one will be create.</p>
+<p>When you register a new sell, if it's your first once, a new cash register will be created. But, in your second sell, the balance will be added, unless you close the cash register. If the last cash register is closed, a new one will be created.</p>
 
+<h2 id="dockerfile">⬇️ Dockerfile</h2>
+
+<p>If you are familiar with Docker, be comfortable to download the image about this project: <a href="https://hub.docker.com/r/venitt/venimarket">Download docker file</a></p>
+<p>Then, just execute the command below in your command prompt or in your virtual machine:</p>
+
+```
+docker pull venitt/venimarket
+```
