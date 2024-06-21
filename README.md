@@ -159,10 +159,10 @@ POST /customer - Register a new sell.
 
 <p>When you register a new sell, if it's your first once, a new cash register will be created. But, in your second sell, the balance will be added, unless you close the cash register. If the last cash register is closed, a new one will be created.</p>
 
-<h2 id="dockerfile">⛔ Dockerfile</h2>
+<h2 id="dockerfile">⬇️ Dockerfile</h2>
 
 <p>If you are familiar with Docker, be confortable to download the image about this project: <a href="https://hub.docker.com/r/venitt/venimarket">Download docker file</a></p>
-<p>Then, just execute the command bellow in your command prompt or in your virtual machine</p>
+<p>Then, just execute the command bellow in your command prompt or in your virtual machine:</p>
 
 ```
 docker pull venitt/venimarket
