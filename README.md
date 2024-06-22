@@ -35,7 +35,7 @@ git clone https://github.com/Venicode/venimarket-api.git
 
 <h3>Starting</h3>
 
-<p>When download to <a href="https://www.transfernow.net/dl/202406204jSKnS5V">api-venimarket.jar</a> is done, move this file whatever you want and open a prompt command. Then, check the path's file and type the command below:</p>
+<p>When download to <a href="https://www.transfernow.net/dl/202406204jSKnS5V">api-venimarket.jar</a> is done, move this file whatever you want and open a command prompt. Then, check the path's file and type the command below:</p>
 
 ```bash
 C:\path\to\file>java -jar api-venimarket.jar
