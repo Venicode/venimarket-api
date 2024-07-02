@@ -26,8 +26,13 @@ public class ProductController {
     public ResponseEntity<List<Product>> getAllProducts(){
         return this.productService.getAllProducts();
     }
+    @GetMapping("/{barcode}")
+    public ResponseEntity<Product> getProductByBarCode(@PathVariable Long barcode) throws Exception {
+        Product product = this.productService.findProductByIBarCode(barcode);
+        return new ResponseEntity<>(product, HttpStatus.OK);
+    }
     @PutMapping("/{id}")
-    public ResponseEntity<Object> updateeProduct(@RequestBody @Valid ProductDto productDto, @PathVariable Long id) throws Exception{
+    public ResponseEntity<Object> updateProduct(@RequestBody @Valid ProductDto productDto, @PathVariable Long id) throws Exception{
         Product newProduct = this.productService.updateProduct(productDto, id);
         return ResponseEntity.noContent().build();
     }

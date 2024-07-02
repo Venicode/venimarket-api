@@ -3,8 +3,6 @@ package com.venimarket.api.domains;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.LocalDateTime;
-
 @Entity(name = "Sell")
 @Table(name = "TB_SELLS")
 @Getter
@@ -12,20 +10,16 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
-public class Sell {
+public class ItemOrder {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
-    @JoinColumn(name = "id_customer")
-    @ManyToOne
-    private Customer customer;
     @JoinColumn(name = "id_product")
     @ManyToOne
     private Product product;
-    @JoinColumn(name = "id_methodPayment")
+    @JoinColumn(name = "id_order")
     @ManyToOne
-    private MethodPayment methodPayment;
+    private Order order;
     private double amount;
     private int quantity;
-    private LocalDateTime sellDate;
 }

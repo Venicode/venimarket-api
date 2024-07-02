@@ -18,4 +18,6 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
             where p.id = :id
             """)
     void disableProduct(Long id);
+
+    Optional<Product> findProductByBarCode(Long barcode);
 }

@@ -70,6 +70,11 @@ public class ProductService {
                 .orElseThrow(()-> new EntityNotFoundException("Product not found."));
 
     }
+    public Product findProductByIBarCode(Long barcode) throws Exception{
+        return this.productRepository.findProductByBarCode(barcode)
+                .orElseThrow(()-> new EntityNotFoundException("Product not found."));
+
+    }
     public ResponseEntity<List<Product>> getAllProducts() {
         List<Product> productList = this.productRepository.findAll();
         return new ResponseEntity<>(productList, HttpStatus.OK);
