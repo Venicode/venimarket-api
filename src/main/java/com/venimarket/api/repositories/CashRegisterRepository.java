@@ -1,16 +1,12 @@
 package com.venimarket.api.repositories;
 
 import com.venimarket.api.domains.CashRegister;
-import com.venimarket.api.domains.MethodPayment;
-import com.venimarket.api.domains.Product;
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.lang.Nullable;
 
 import java.time.LocalDateTime;
-import java.util.Optional;
 
 @Transactional
 public interface CashRegisterRepository extends JpaRepository<CashRegister, Long> {
@@ -44,4 +40,5 @@ public interface CashRegisterRepository extends JpaRepository<CashRegister, Long
             limit 1
             """)
     CashRegister findAtualCashRegister(LocalDateTime dateOne, LocalDateTime dateTwo);
+    CashRegister findAllByIsClosedFalse();
 }

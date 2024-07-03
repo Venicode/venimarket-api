@@ -44,9 +44,6 @@ public class CashRegisterService {
         }
     }
 
-    public CashRegister findCashRegisterById(Long id){
-        return this.cashRegisterRepository.getReferenceById(id);
-    }
     public ResponseEntity<List<CashRegister>> getAllCashRegisters(){
         List<CashRegister> cashRegisters = this.cashRegisterRepository.findAll();
         return new ResponseEntity<>(cashRegisters, HttpStatus.OK);
@@ -54,6 +51,10 @@ public class CashRegisterService {
 
     public ResponseEntity<CashRegister> closeCashRegister(Long id) {
         this.cashRegisterRepository.closeCashRegister(id, LocalDateTime.now());
+        return ResponseEntity.noContent().build();
+    }
+    public ResponseEntity<List<CashRegister>> findAllByIsClosedFalse() {
+        this.cashRegisterRepository.findAllByIsClosedFalse();
         return ResponseEntity.noContent().build();
     }
 }
