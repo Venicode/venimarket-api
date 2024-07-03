@@ -11,6 +11,7 @@ import java.util.Optional;
 @Transactional
 public interface MethodPaymentRepository extends JpaRepository<MethodPayment, Long> {
     Optional<MethodPayment> findMethodPaymentById(Long id);
+    Optional<MethodPayment> findMethodPaymentByDescriptionMethodPayment(String descriptionMethodPayment);
     @Modifying
     @Query("""
             delete MethodPayment m

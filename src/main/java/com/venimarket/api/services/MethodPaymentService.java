@@ -33,6 +33,11 @@ public class MethodPaymentService {
                 .orElseThrow(()-> new EntityNotFoundException("Method Payment not found."));
     }
 
+    public MethodPayment findMethodPaymentByDescriptionMethodPayment(String descriptionMethodPayment) throws Exception {
+        return this.methodPaymentRepository.findMethodPaymentByDescriptionMethodPayment(descriptionMethodPayment)
+                .orElseThrow(()-> new EntityNotFoundException("Method Payment not found."));
+    }
+
     public ResponseEntity<List<MethodPayment>> getAllMethodPayments() {
         List<MethodPayment> methodPaymentList = this.methodPaymentRepository.findAll();
         return  new ResponseEntity<>(methodPaymentList, HttpStatus.OK);
