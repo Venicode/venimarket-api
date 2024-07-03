@@ -18,6 +18,10 @@ public class CashRegisterController {
     public ResponseEntity<List<CashRegister>> getAllCashRegisters(){
         return this.cashRegisterService.getAllCashRegisters();
     }
+    @GetMapping("/findAllIsClosedFalse")
+    public ResponseEntity<List<CashRegister>> findAllIsClosedFalse(){
+        return this.cashRegisterService.findAllByIsClosedFalse();
+    }
     @PutMapping("/CloseCashRegister/{id}")
     public ResponseEntity<CashRegister> closeCashRegister(@PathVariable Long id){
         return this.cashRegisterService.closeCashRegister(id);
