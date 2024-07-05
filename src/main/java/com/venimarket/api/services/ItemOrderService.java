@@ -30,12 +30,15 @@ public class ItemOrderService {
     public ItemOrder createItemOrder(ItemOrderDto itemOrderDto) throws Exception {
         Order order = orderService.findOrderById(itemOrderDto.id_order());
         Product product = this.productService.findProductById(itemOrderDto.id_product());
-        double amountTotal = product.getSellingPrice()* itemOrderDto.quantity();
+        double amountTotal = ((product.getSellingPrice()* itemOrderDto.quantity())-itemOrderDto.discount());
 
         ItemOrder itemOrder = new ItemOrder();
 
         if(itemOrderDto.amount()<amountTotal){
             throw new InsufficientAmountException("Insufficient amount.");
+        }
+        if(itemOrderDto.amount()>amountTotal){
+            throw new InsufficientAmountException("More amount than necessary.");
         }
         if(itemOrderDto.quantity()> product.getQuantity()){
             throw new InsufficientQuantityException("Insufficient quantity in stock.");
@@ -44,6 +47,7 @@ public class ItemOrderService {
         itemOrder.setAmount(itemOrderDto.amount());
         itemOrder.setProduct(product);
         itemOrder.setQuantity(itemOrderDto.quantity());
+        itemOrder.setDiscount(itemOrderDto.discount());
         order.setSellDate(LocalDateTime.now());
 
         this.itemOrderRepository.save(itemOrder);

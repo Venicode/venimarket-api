@@ -22,4 +22,5 @@ public class ItemOrder {
     private Order order;
     private double amount;
     private int quantity;
+    private double discount;
 }

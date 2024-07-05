@@ -10,6 +10,7 @@ public record ItemOrderDto(
         @NotNull
         double amount,
         @NotNull
-        int quantity
+        int quantity,
+        double discount
 ) {
 }
