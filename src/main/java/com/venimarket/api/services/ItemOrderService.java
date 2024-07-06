@@ -30,17 +30,17 @@ public class ItemOrderService {
     public ItemOrder createItemOrder(ItemOrderDto itemOrderDto) throws Exception {
         Order order = orderService.findOrderById(itemOrderDto.id_order());
         Product product = this.productService.findProductById(itemOrderDto.id_product());
-        double amountTotal = ((product.getSellingPrice()* itemOrderDto.quantity())-itemOrderDto.discount());
+        double amountTotal = ((product.getSellingPrice() * itemOrderDto.quantity()) - itemOrderDto.discount());
 
         ItemOrder itemOrder = new ItemOrder();
 
-        if(itemOrderDto.amount()<amountTotal){
+        if (itemOrderDto.amount() < amountTotal) {
             throw new InsufficientAmountException("Insufficient amount.");
         }
-        if(itemOrderDto.amount()>amountTotal){
+        if ((itemOrderDto.amount() - itemOrderDto.discount()) != amountTotal) {
             throw new InsufficientAmountException("More amount than necessary.");
         }
-        if(itemOrderDto.quantity()> product.getQuantity()){
+        if (itemOrderDto.quantity() > product.getQuantity()) {
             throw new InsufficientQuantityException("Insufficient quantity in stock.");
         }
         itemOrder.setOrder(order);
@@ -52,8 +52,8 @@ public class ItemOrderService {
 
         this.itemOrderRepository.save(itemOrder);
 
-        this.cashRegisterService.addBalanceCashRegister(itemOrderDto.amount(), order.getSellDate());
-        this.stockService.updateStock(product.getQuantity()- itemOrderDto.quantity(), product);
+        this.cashRegisterService.addBalanceCashRegister(amountTotal, order.getSellDate());
+        this.stockService.updateStock(product.getQuantity() - itemOrderDto.quantity(), product);
         return itemOrder;
     }
 
