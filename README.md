@@ -8,6 +8,7 @@
 <img src="https://img.shields.io/badge/H2 Database-darkblue?style=for-the-badge&logo=java" alt="Sistema Mercado">
 ![Swagger](https://img.shields.io/badge/-Swagger-%23Clojure?style=for-the-badge&logo=swagger&logoColor=white)
 	![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
+ <img src="https://img.shields.io/badge/Version 2.0-gray?style=for-the-badge&logo=java" alt="Sistema Mercado">
 </div>
 <p align="center">
  <a href="#started">Getting Started</a> • 
