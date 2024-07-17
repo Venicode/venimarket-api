@@ -90,7 +90,7 @@ DELETE /productCategory/{id} - Delete a specific product category by ID.
 
 GET /product - Retrieve a list of all products.
 
-GET /product/{id} - Retrieve a specific product by ID.
+GET /product/{barcode} - Retrieve a specific product by barcode.
 
 POST /product - Register a new product.
 
@@ -107,6 +107,8 @@ DELETE /product/{id} - Delete(disable changing isActive=false) a specific produc
 GET /methodPayment - Retrieve a list of all method payments.
 
 GET /methodPayment/{id} - Retrieve a specific method payment by ID.
+
+GET /methodPayment/descriptionMethodPayment/{descriptionMethodPayment} - Retrieve a specific method payment by description.
 
 POST /methodPayment - Register a new method payment.
 
@@ -142,13 +144,23 @@ PUT /cashRegister/CloseCashRegister/{id} - Close a specific cash register by Id.
 
 ```
 
-<p>Sell Endpoints</p>
+<p>Order Endpoints</p>
 
 ```
 
-GET /sell - Retrieve a list of all sells.
+GET /order - Retrieve a list of all orders.
 
-POST /customer - Register a new sell.
+POST /order - Register a new order.
+
+```
+
+<p>Item Order Endpoints</p>
+
+```
+
+GET /itemOrder - Retrieve a list of all item orders.
+
+POST /itemOrder - Register a new item order.
 
 ```
 
